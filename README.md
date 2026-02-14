@@ -1,6 +1,6 @@
 # Engineering CollegAdmissionPortal
 
-## 📌 Project Description
+##  Project Description
 Online Admission Portal built with ASP.NET Core Web API and MVC. Supports student admission, profile photo upload, filtering by gender and course, duplicate email validation, and proper database relationships using Entity Framework Core.
 
 
@@ -13,7 +13,7 @@ The system allows:
 
 ---
 
-## 🏗️ Architecture
+##  Architecture
 
 Solution contains two projects:
 
@@ -32,7 +32,7 @@ MVC project depends completely on API.
 
 ---
 
-## 🗄️ Database Design
+##  Database Design
 
 Tables:
 - Students
@@ -45,7 +45,7 @@ Relationships:
 
 ---
 
-## ✨ Features
+##  Features
 
 - Add Student
 - Upload Profile Photo
@@ -57,7 +57,7 @@ Relationships:
 
 ---
 
-## 🛠️ Technologies Used
+##  Technologies Used
 
 - .NET 10
 - ASP.NET Core Web API
@@ -69,13 +69,13 @@ Relationships:
 
 ---
 
-## 🎥 Demo Video
+##  Demo Video
 
 [Click Here to Watch Demo](https://drive.google.com/file/d/1xTTKMc_NGD5qzw33ItSgw6eNdP8N2Oin/view?usp=sharing)
 
 ---
 
-## ⚙️ How To Run
+##  How To Run
 
 1. Clone repository
 2. Update Connection String in API project
@@ -85,6 +85,6 @@ Relationships:
 
 ---
 
-## 👨‍💻 Developed By
+## Developed By
 
 Pulagam Tripura Sai
