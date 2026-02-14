@@ -19,7 +19,7 @@ namespace EngineeringCollegeAPI.Controllers
             _env = env;
         }
 
-        // GET: api/Students?gender=Male&courseId=1
+        
         [HttpGet]
         public async Task<IActionResult> Get(string? gender, int? courseId)
         {
@@ -34,14 +34,13 @@ namespace EngineeringCollegeAPI.Controllers
             return Ok(await query.ToListAsync());
         }
 
-        // GET: api/Students/courses
+        
         [HttpGet("courses")]
         public async Task<IActionResult> GetCourses()
         {
             return Ok(await _context.Courses.ToListAsync());
         }
 
-        // POST: api/Students
         [HttpPost]
         public async Task<IActionResult> Create([FromForm] Student student, IFormFile? photo)
         {
@@ -73,3 +72,4 @@ namespace EngineeringCollegeAPI.Controllers
         }
     }
 }
+
