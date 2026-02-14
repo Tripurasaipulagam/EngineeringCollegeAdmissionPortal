@@ -1,0 +1,71 @@
+﻿@model List<EngineeringCollegeAPI.Models.Student>
+
+<h2>Students</h2>
+
+<form method="get" class="row mb-3">
+    <div class="col-md-3">
+        <select name="gender" class="form-control">
+            <option value="">All Genders</option>
+            <option value="Male" selected="@(ViewBag.SelectedGender == "Male")">Male</option>
+            <option value="Female" selected="@(ViewBag.SelectedGender == "Female")">Female</option>
+        </select>
+    </div>
+    <div class="col-md-3">
+        <select name="courseId" class="form-control">
+            <option value="">All Courses</option>
+            @foreach (var c in (ViewBag.Courses as List<EngineeringCollegeAPI.Models.Course> ?? new List<EngineeringCollegeAPI.Models.Course>()))
+            {
+                <option value="@c.CourseId" selected="@(ViewBag.SelectedCourse != null && (int)ViewBag.SelectedCourse == c.CourseId)">
+                    @c.CourseName
+                </option>
+            }
+        </select>
+    </div>
+    <div class="col-md-2">
+        <button class="btn btn-primary">Filter</button>
+    </div>
+</form>
+
+<a asp-action="Create" class="btn btn-success mb-2">Add Student</a>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Photo</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Address</th>
+            <th>Year</th>
+            <th>Gender</th>
+            <th>Course</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null && Model.Any())
+        {
+            foreach (var s in Model)
+            {
+                <tr>
+                    <td>
+                        @if (!string.IsNullOrEmpty(s.ProfilePhoto))
+                        {
+                            <img src="http://localhost:5289@s.ProfilePhoto" width="60" height="60" />
+                        }
+                    </td>
+                    <td>@s.FirstName @s.LastName</td>
+                    <td>@s.Email</td>
+                    <td>@s.Address</td>
+                    <td>@s.Year</td>
+                    <td>@s.Gender</td>
+                    <td>@s.Course?.CourseName</td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="5">No students found</td>
+            </tr>
+        }
+    </tbody>
+</table>

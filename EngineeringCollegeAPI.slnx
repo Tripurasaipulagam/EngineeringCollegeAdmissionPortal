@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="EngineeringCollegeAPI/EngineeringCollegeAPI.csproj" />
+  <Project Path="EngineeringCollegeWeb/EngineeringCollegeWeb.csproj" />
+</Solution>
